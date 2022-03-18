@@ -1,13 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view />
+    <van-tabbar
+      v-model="active"
+      active-color="#ee0a24"
+      inactive-color="#000"
+      route
+    >
+      <van-tabbar-item name="name" icon="home-o" to="/">标签</van-tabbar-item>
+      <van-tabbar-item name="search" icon="search" to="user"
+        >标签</van-tabbar-item
+      >
+      <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      active: "",
+    };
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

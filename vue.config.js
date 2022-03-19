@@ -14,4 +14,12 @@ module.exports = {
     },
 
   },
+  // devServer: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://test.51zhaolian.com:8088/wech/wechapi/member',
+
+  //     },
+  //   },
+  // },
 };

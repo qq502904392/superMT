@@ -7,12 +7,10 @@
       inactive-color="#000"
       route
     >
-      <van-tabbar-item name="name" icon="home-o" to="/">标签</van-tabbar-item>
-      <van-tabbar-item name="search" icon="search" to="user"
-        >标签</van-tabbar-item
-      >
+      <van-tabbar-item name="name" icon="home-o" to="/">首页</van-tabbar-item>
+      <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
       <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="setting-o" to="user">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

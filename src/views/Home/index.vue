@@ -59,9 +59,10 @@
     <van-swipe
       class="my-swipe"
       :autoplay="3000"
-      indicator-color="white"
+      indicator-color="#fed002"
       show-indicators
       touchable
+      height="235"
     >
       <van-swipe-item>
         <grid :gridList="gridList1"></grid>
@@ -95,7 +96,7 @@ import { mapState } from "vuex";
 import grid from "./child/index.vue";
 import areaR from "./child/area.vue";
 // import Footer from "@/components/Foooter/index";
-import floor from "@/views/Floor/index";
+import floor from "@/components/Floor/index";
 import backTop from "@/components/backTop/index";
 export default {
   data() {

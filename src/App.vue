@@ -1,25 +1,14 @@
 <template>
   <div id="app">
     <router-view />
-    <van-tabbar
-      v-model="active"
-      active-color="#ee0a24"
-      inactive-color="#000"
-      route
-    >
-      <van-tabbar-item name="name" icon="home-o" to="/">首页</van-tabbar-item>
-      <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o" to="user">我的</van-tabbar-item>
-    </van-tabbar>
+    <Footer></Footer>
   </div>
 </template>
 <script>
+import Footer from "@/components/Footer/index";
 export default {
-  data() {
-    return {
-      active: "",
-    };
+  components: {
+    Footer,
   },
 };
 </script>

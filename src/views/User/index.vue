@@ -1,19 +1,27 @@
 <template>
   <div>
-    <Footer></Footer>
+    <regis regisT="注册"></regis>
   </div>
 </template>
 
 <script>
-import Footer from "@/components/Foooter/index";
+import regis from "./Regis/index.vue";
 export default {
-  components: {
-    Footer,
-  },
   data() {
     return {
-      active: "user",
+      userList: {},
     };
+  },
+  components: {
+    regis,
+  },
+  methods: {
+    // userInfo(value) {
+    //   this.userList = value;
+    //   // const { nickName, cellphone, password } = this.userList;
+    //   // this.$API.post("/regist", { nickName, cellphone, password });
+    //   // this.$router.push("login");
+    // },
   },
 };
 </script>

@@ -9,10 +9,11 @@ import '@/mock/mockServer'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import 'vant/lib/index.less';
-Vue.use(Vant);
 
-import API from '@/api/http'
+Vue.use(Vant);
+import * as API from '@/api/index'
 Vue.prototype.$API = API;
+
 Vue.config.productionTip = false
 
 new Vue({

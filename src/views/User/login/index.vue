@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <section class="login-container">
     <div class="regisTop">登陆</div>
+    <van-icon class="login-icon" name="close" @click="$router.push('/user')" />
     <div class="form-tittle">
       <span :class="{ on: show }" @click="showOther">密码登录</span>&nbsp;
       <span :class="{ on: !show }" @click="showOther">短信登陆</span>
@@ -17,7 +18,7 @@
       <van-field
         v-show="show"
         class="regisIpt"
-        v-model="password"
+        v-model.number="password"
         :type="checked ? 'text' : 'password'"
         name="password"
         label="密码"
@@ -72,7 +73,7 @@
         >
       </div>
     </van-form>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -97,10 +98,16 @@ export default {
         if (this.password !== 666) {
           this.$toast("密码错误");
         }
+        const { cellphone } = this;
+        this.$store.dispatch("setUserInfo", cellphone);
+        this.$router.push("/user");
       } else {
         if (this.sms !== 666) {
           this.$toast("验证码错误");
         }
+        const { cellphone } = this;
+        this.$store.dispatch("setUserInfo", cellphone);
+        this.$router.push("/user");
       }
     },
     showOther() {
@@ -123,22 +130,34 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../../style/mixin";
 body {
   background-color: #f6f6f6;
   padding: 0;
   margin: 0;
+  .login-container {
+    position: relative;
+    .login-icon {
+      position: absolute;
+      left: 0;
+      top: 50px;
+    }
+  }
 }
 .form-container {
   padding: 10px 10px;
 }
 .form-tittle {
+  position: relative;
   margin-top: 20px;
   text-align: center;
+  // .cl();
   height: 20px;
   line-height: 20px;
+
   .on {
     font-weight: 700;
-    color: #fed002;
+    color: @yellow;
   }
 }
 .regisTop {
@@ -147,7 +166,7 @@ body {
   border-bottom: 1px solid #ccc;
   text-align: center;
   line-height: 45px;
-  background-color: #fed002;
+  background-color: @yellow;
 }
 .regisIpt {
   margin: 15px 0;

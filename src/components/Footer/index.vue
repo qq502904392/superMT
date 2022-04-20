@@ -1,32 +1,33 @@
 <template>
-  <div>
+  <footer>
     <van-tabbar
       v-model="active"
       active-color="#fed002"
       inactive-color="#000"
       route
     >
-      <van-tabbar-item name="home" icon="home-o" to="/home"
+      <van-tabbar-item name="home" icon="wap-home" to="/home"
         >首页</van-tabbar-item
       >
-      <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
-      <van-tabbar-item name="order" icon="friends-o">标签</van-tabbar-item>
-      <van-tabbar-item name="user" icon="setting-o" to="/user"
+      <van-tabbar-item name="search" icon="send-gift" to=""
+        >搜索</van-tabbar-item
+      >
+      <van-tabbar-item name="order" icon="cart">购物车</van-tabbar-item>
+      <van-tabbar-item name="user" icon="friends" to="/user"
         >我的</van-tabbar-item
       >
     </van-tabbar>
-  </div>
+  </footer>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      active: "home",
+      active: "",
     };
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>

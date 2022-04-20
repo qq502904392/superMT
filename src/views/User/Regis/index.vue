@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <section class="regis-container">
     <div class="regisTop">
       {{ regisT }}
     </div>
-
-    <van-form @submit="onSubmit" class="form-container">
+    <van-icon class="regis-icon" name="close" @click="$router.push('/user')" />
+    <van-form class="form-container">
       <van-field
         class="regisIpt"
         v-model="nickName"
@@ -58,12 +58,18 @@
       </van-field>
 
       <div style="margin: 16px">
-        <van-button round block color="#fed002" type="info" native-type="submit"
+        <van-button
+          round
+          block
+          color="#fed002"
+          type="info"
+          native-type="submit"
+          @click="onSubmit"
           >注册</van-button
         >
       </div>
     </van-form>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -101,11 +107,20 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+@import '../../../style/mixin';
 body {
-  background-color: #f6f6f6;
+  background-color: @bc;
   padding: 0;
   margin: 0;
+  .regis-container {
+    position: relative;
+    .regis-icon {
+      position: absolute;
+      left: 0;
+      top: 50px;
+    }
+  }
 }
 .form-container {
   padding: 50px 10px;
@@ -115,7 +130,7 @@ body {
   border-bottom: 1px solid #ccc;
   text-align: center;
   line-height: 45px;
-  background-color: #fed002;
+  background-color: @yellow;
 }
 .regisIpt {
   margin: 15px 0;

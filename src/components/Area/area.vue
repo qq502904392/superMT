@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <van-area
       title="标题"
       :area-list="areaList"
@@ -9,7 +9,7 @@
       @cancel="cleanArea"
       :value="areaLi"
     />
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <router-view />
-    <Footer></Footer>
+    <keep-alive exclude="/shop">
+      <router-view />
+    </keep-alive>
+    <Footer v-show="this.$route.meta.show"></Footer>
   </div>
 </template>
 <script>
@@ -10,9 +12,26 @@ export default {
   components: {
     Footer,
   },
+  data() {
+    return {
+      timerId: "",
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.justifyPos);
+  },
+  methods: {
+    justifyPos() {
+      if (this.timerId) clearTimeout(this.timerId);
+      this.timerId = setTimeout(() => {
+        this.$route.meta.y = window.pageYOffset;
+      }, 300);
+    },
+  },
 };
 </script>
-<style>
+<style lang="less" scoped>
+@import "./style/mixin";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

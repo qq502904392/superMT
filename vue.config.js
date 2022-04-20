@@ -8,7 +8,10 @@ module.exports = {
           // 直接覆盖变量
           // "grid-item-content-background-color": "#eee"
           "notice-bar-height": "30px",
-          "search-input-height": "25px"
+          'search-input-height': '10px',
+          "sidebar-line-height": "12px",
+          "sidebar-selected-text-color": '#fed002',
+          "card-background-color": "#ffffff",
           // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
         },
       },

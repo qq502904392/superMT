@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <van-button
       color="rgba(0,0,0,.3)"
       round
@@ -10,7 +10,7 @@
     >
       <van-icon class="icon-backTop" name="arrow-up" size="15" />
     </van-button>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -25,11 +25,11 @@ export default {
   },
   // 组件创建监听scroll此方法
   mounted() {
-    window.addEventListener("scroll", this.handleScoll, true);
+    window.addEventListener("scroll", this.handleScroll, true);
   },
   // 组件销毁移除监听
   destroyed() {
-    window.removeEventListener("scroll", this.handleScoll);
+    window.removeEventListener("scroll", this.handleScroll);
     window.clearInterval(this.timerId);
   },
   methods: {
@@ -43,7 +43,7 @@ export default {
         }
       }, 30);
     },
-    handleScoll() {
+    handleScroll() {
       // 当滚动的距离大于700 时出现该按钮
       this.scrollTop = window.pageYOffset;
       if (window.pageYOffset / 100 > 7) {

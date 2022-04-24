@@ -6,11 +6,12 @@ import store from './store'
 import 'normalize.css/normalize.css'
 
 import '@/mock/mockServer'
+
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import 'vant/lib/index.less';
-
 Vue.use(Vant);
+
 import * as API from '@/api/index'
 Vue.prototype.$API = API;
 

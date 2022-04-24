@@ -29,18 +29,18 @@
 
 <script>
 export default {
-  props: ["floorList"],
+  props: ['floorList'],
   methods: {
     goShop(i) {
-      this.$router.push({ path: "/shop", query: { tx: i.img } });
-      this.$store.dispatch("getHeaderImag", i);
+      this.$router.push({ path: '/shop', query: { tx: i.img } })
+      this.$store.dispatch('getHeaderImag', i)
     },
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
-@import "../../style/mixin";
+@import '../../style/mixin';
 .floor-container {
   margin: 20px 0;
   .fj(space-evenly);

@@ -36,20 +36,20 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
       show: false,
-      actions: [{ name: "选项一" }, { name: "选项二" }, { name: "选项三" }],
-    };
+      actions: [{ name: '选项一' }, { name: '选项二' }, { name: '选项三' }],
+    }
   },
   methods: {
     onSelect(item) {
       // 默认情况下点击选项时不会自动收起
       // 可以通过 close-on-click-action 属性开启自动收起
-      this.show = false;
-      Toast(item.name);
+      this.show = false
+      Toast(item.name)
     },
   },
   computed: {
@@ -58,11 +58,11 @@ export default {
       image: (state) => state.shop.images,
     }),
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
-@import "../../style/mixin";
+@import '../../style/mixin';
 .text {
   height: 160px;
   padding: 44px 0 0 0;

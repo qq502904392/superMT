@@ -12,14 +12,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
-  props: ["gridList"],
-};
+  props: ['gridList'],
+}
 </script>
 
 <style scoped type="text/css" lang="less">
-@import "../../style/mixin";
+@import '../../style/mixin';
 .item {
   .fj(space-evenly);
   flex-wrap: wrap;

@@ -1,11 +1,6 @@
 <template>
   <section class="floor-container">
-    <div
-      class="floor-item"
-      @click="goShop(i)"
-      v-for="i in floorList"
-      :key="i.id"
-    >
+    <div class="floor-item" @click="goShop(i)" v-for="i in floorList" :key="i.id">
       <div>
         <img class="floor-image" :src="i.img" style="" />
       </div>
@@ -14,8 +9,7 @@
       </div>
 
       <div class="floor-info">
-        <span>{{ Math.round(Math.random() * 4 + 1) }}分</span
-        ><i class="floor-info-i"></i
+        <span>{{ Math.round(Math.random() * 4 + 1) }}分</span><i class="floor-info-i"></i
         ><span>月售 {{ Math.round(Math.random() * 700 + 800) }}</span>
       </div>
       <div class="floor-cur">
@@ -34,6 +28,7 @@ export default {
     goShop(i) {
       this.$router.push({ path: '/shop', query: { tx: i.img } })
       this.$store.dispatch('getHeaderImag', i)
+      // this.$bus.$emit('getHeaderImg',i.img)
     },
   },
 }

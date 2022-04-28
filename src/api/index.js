@@ -1,4 +1,4 @@
-import requests from "@/api/mock";
+import requests from "@/utils/mock";
 export const reqGridList = () => requests({
   url: "/grid"
 })
@@ -14,3 +14,4 @@ export const reqShopRatings = () => requests({
 export const reqShopInfo = () => requests({
   url: '/info'
 })
+  

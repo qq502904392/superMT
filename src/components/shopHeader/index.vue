@@ -1,10 +1,10 @@
 <template>
   <section>
-    <div class="text" :style="{ backgroundImage: 'url(' + image.img + ')' }">
+    <div class="text" :style="{ backgroundImage: 'url(' + backgroundImgs + ')' }">
       <div class="back" @click="$router.back()">
         <i class="iconfont icon-fanhui"></i>
       </div>
-      <div class="avatar"><img :src="image.img" /></div>
+      <div class="avatar"><img :src="backgroundImgs" /></div>
       <div class="info">
         <div class="info-first">
           <van-tag color="#fed002" text-color="#AC0000">品牌</van-tag>
@@ -18,13 +18,9 @@
           <span>距离{{ info.distance }}</span>
         </div>
         <div class="info-third">
-          <van-tag
-            v-if="info.supports"
-            color="#ffe1e1"
-            text-color="#ad0000"
-            size="mini"
-            >{{ info.supports[0].name }}</van-tag
-          >
+          <van-tag v-if="info.supports" color="#ffe1e1" text-color="#ad0000" size="mini">{{
+            info.supports[0].name
+          }}</van-tag>
 
           <span v-if="info.supports">
             {{ info.supports[0].content }}
@@ -36,11 +32,12 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 export default {
   data() {
     return {
       show: false,
+      backgroundImgs: '',
       actions: [{ name: '选项一' }, { name: '选项二' }, { name: '选项三' }],
     }
   },
@@ -52,11 +49,14 @@ export default {
       Toast(item.name)
     },
   },
+ 
+  
   computed: {
     ...mapState({
-      info: (state) => state.shop.info,
-      image: (state) => state.shop.images,
+      info: state => state.shop.info,
+      image: state => state.shop.images,
     }),
+    ...mapGetters(['backImg']),
   },
 }
 </script>

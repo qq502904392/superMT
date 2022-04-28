@@ -14,6 +14,7 @@ Vue.use(Vant);
 
 import * as API from '@/api/index'
 Vue.prototype.$API = API;
+Vue.prototype.$bus=new Vue()
 
 Vue.config.productionTip = false
 

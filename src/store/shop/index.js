@@ -49,7 +49,9 @@ const actions = {
   }
 }
 const getters = {
-
+  backImg(state) {
+    return state.images.img
+  }
 }
 export default {
   state,

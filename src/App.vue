@@ -7,31 +7,31 @@
   </div>
 </template>
 <script>
-import Footer from "@/components/Footer/index";
+import Footer from '@/components/Footer/index'
 export default {
   components: {
     Footer,
   },
   data() {
     return {
-      timerId: "",
-    };
+      timerId: '',
+    }
   },
   mounted() {
-    window.addEventListener("scroll", this.justifyPos);
+    window.addEventListener('scroll', this.justifyPos)
   },
   methods: {
     justifyPos() {
-      if (this.timerId) clearTimeout(this.timerId);
+      if (this.timerId) clearTimeout(this.timerId)
       this.timerId = setTimeout(() => {
-        this.$route.meta.y = window.pageYOffset;
-      }, 300);
+        this.$route.meta.y = window.pageYOffset
+      }, 300)
     },
   },
-};
+}
 </script>
 <style lang="less" scoped>
-@import "./style/mixin";
+@import './style/mixin';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
